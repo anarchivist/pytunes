@@ -23,25 +23,27 @@ class main:
 
 class prev:
   def GET(self):
-    interface.previous_track()
     ct = " - ".join(curr())
     print render.base(track = ct)
     print "<b>Previous track requested</b>"
     print render.bottom
-    
+    interface.previous_track()
+
 class next:
-    interface.next_track()
+  def GET(self):
     ct = " - ".join(curr())
     print render.base(track = ct)
     print "<b>Next track requested</b>"
     print render.bottom
+    interface.next_track()
 
 class playpause:
-    interface.playpause()
+  def GET(self):
     ct = " - ".join(curr())
     print render.base(track = ct)
     print "<b>Toggled play/pause</b>"
     print render.bottom
+    interface.playpause()
 
 web.webapi.internalerror = web.debugerror
 if __name__ == '__main__': web.run(urls, globals())
