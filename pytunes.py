@@ -16,7 +16,7 @@ def curr():
   return [track.artist(), track.name(), track.album()]
 
 class main:
-  def GET(self, query_string):
+  def GET(self):
     ct = " - ".join(curr())
     print render.base(track = ct)
     print render.bottom
