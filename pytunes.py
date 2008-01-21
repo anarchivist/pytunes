@@ -1,6 +1,7 @@
 import web, appscript
 
 interface = appscript.app("iTunes")
+render = web.template.render('templates/')
 
 urls = (
   '/', 'main',
